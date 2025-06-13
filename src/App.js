@@ -23,7 +23,7 @@ function App() {
     Object.entries(formData).forEach(([key, value]) => form.append(key, value));
 
     try {
-      const res = await fetch('https://formsubmit.co/YOUR_EMAIL@example.com', {
+      const res = await fetch('https://formsubmit.co/jonio298@gmail.com', {
         method: 'POST',
         body: form,
         headers: { 'Accept': 'application/json' }

@@ -82,3 +82,13 @@ button:hover {
 .fade-in {
   opacity: 1;
 }
+.logo-wrapper.left {
+  display: flex;
+  justify-content: flex-start;
+  align-items: left;
+  margin-bottom: 20px;
+}
+
+.logo.large {
+  height: 60px;
+}
