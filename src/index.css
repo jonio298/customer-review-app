@@ -82,13 +82,55 @@ button:hover {
 .fade-in {
   opacity: 1;
 }
-.logo-wrapper.left {
-  display: flex;
-  justify-content: flex-start;
-  align-items: left;
-  margin-bottom: 20px;
+/* Glowing blue theme variables */
+:root {
+  --glow-blue: #5aa2dd;
+  --glow-blue-light: #80d4ee;
+  --glow-shadow: 0 0 10px var(--glow-blue-light), 0 0 20px var(--glow-blue);
 }
 
-.logo.large {
-  height: 60px;
+/* Animate fade-in */
+.fade-in {
+  opacity: 1;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Glowing input focus */
+input:focus, select:focus, textarea:focus {
+  border-color: var(--glow-blue);
+  outline: none;
+  box-shadow: var(--glow-shadow);
+}
+
+/* Glowing button hover */
+button {
+  background-color: var(--glow-blue);
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--glow-blue-light);
+  box-shadow: var(--glow-shadow);
+}
+
+/* Logo glow pulse */
+.logo {
+  animation: pulse 3s infinite ease-in-out;
+  filter: drop-shadow(0 0 8px var(--glow-blue));
+}
+
+@keyframes pulse {
+  0%   { filter: drop-shadow(0 0 8px var(--glow-blue)); }
+  50%  { filter: drop-shadow(0 0 16px var(--glow-blue-light)); }
+  100% { filter: drop-shadow(0 0 8px var(--glow-blue)); }
+}
+
+/* Container subtle entrance animation */
+.container {
+  animation: fadeIn 0.7s ease-in-out;
 }
